@@ -17,10 +17,16 @@ let tables = [];
 function renderHTMLReservation(targetElement, index, name) {
     // Create HTML reservation element
     let reservation = $("div").attr("class", "well");
-    reservation
-    let orderNumber = $("span").attr("class", "label label-primary");
 
-    $(`#${targetElement}`).append()
+    let reserveHead = $("h2");
+    reserveHead.text(` | ${name}`);
+
+    let reserveNumber = $("span").attr("class", "label label-primary");
+    reserveNumber.text(index);
+
+    reserveHead.prepend(reserveNumber);
+    reservation.append(reserveHead);
+    $(`#${targetElement}`).append(reservation);
 }
 
 /**
